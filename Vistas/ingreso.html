@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="bootstrap-3.3.6-dist/js/jquery.js"></script>
+
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+
+      $('#modal1').on('click', function(){
+        $('#myModal').modal('toggle')         
+      })      
+      $('#modal2').on('click', function(){
+        $('#myModal').modal('toggle')         
+      })  
+
+    })
+  
+  
+</script>
+
+
+</head>
+<body>
+		
+<!-- Boton login -->
+<div class="container">
+	<button type="button" class="modal1 btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Login
+</button>
+<!-- Formulario modal login -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ingreso</h4>
+      </div>
+           
+          <div class="modal-body">
+            <form class="form-horizontal" method="post" action='' name="login_form">
+				<div class="form-group">
+    				<label for="inputCI" class="col-xs-2 col-xs-offset-1 control-label">CI:</label>
+  					  <div class="col-sm-7">
+    					  <input type="email" class="form-control" id="inputCi" placeholder="Carnet de identidad">
+   					 </div>
+ 			 </div>
+
+ 			 <div class="form-group">
+    				<label for="inputPass" class="col-xs-2 col-xs-offset-1 control-label">Password:</label>
+  					  <div class="col-sm-7">
+    					  <input type="email" class="form-control" id="inputPassword" placeholder="Password">
+   					 </div>
+ 			 </div>
+
+ 			 			  <div class="form-group">
+			    <div class="col-xs-offset-3 col-xs-7">
+			      <button type="submit" class="btn btn-success">Ingresar</button>
+			    </div>
+			  </div>
+
+
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger">Cancelar
+              </button>
+          </div>
+        </div>
+	</div>
+	</div>
+
+
+<!-- Pestaña ABM GRUPOS -->
+
+<ul class="nav nav-tabs" role="tablist">
+ <li class="active"><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-first">Registrar</a></li>
+ <li><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-second">Modificar</a></li>
+ <li><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-third">Eliminar</a></li>
+</ul>
+<div class="tab-content">
+ <div class="active tab-pane fade in" id="tabs-first">
+  
+<!-- FORM CREAR GRUPOS -->
+<h2>Registrar nuevo grupo</h2>
+<form class="form-horizontal">
+  
+  <div class="form-group">
+    <label for="inputNombre" class="col-xs-2 control-label">Nombre:</label>
+    <div class="col-xs-8">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputCategoria" class="col-xs-2 control-label">Categoria:</label>
+    <div class="col-xs-2">
+      <select class="form-control">
+        <option></option>
+        <option>SUB 5</option>
+        <option>SUB 7</option>
+        <option>SUB 9</option>
+        <option>SUB 11</option>
+        <option>SUB 13</option>
+        <option>SUB 15</option>
+        <option>SUB 17</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputJugadores" class="col-xs-2 control-label">Jugadores:</label>
+    <div class="col-xs-8">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Cantidad de jugadores">
+    </div>
+  </div>
+
+  
+  <div class="form-group">
+    <div class="col-xs-offset-2 col-xs-10">
+      <button type="submit" class="btn btn-success">Registrar</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-offset-9 col-xs-2">
+      <button type="submit" class="btn btn-primary">Limpiar</button>
+    </div>
+  </div>
+</form>
+<!-- FIN FORM CREAR GRUPOS -->
+
+
+ </div>
+ <div class="tab-pane fade" id="tabs-second">
+
+
+  <!-- FORM MODIFICAR GRUPOS -->
+<h2>Modificar grupo</h2>
+<form class="form-horizontal" name="modificar">
+  
+  <div class="form-group">
+    <label for="inputNombre" class="col-xs-2 control-label" id="label">   </label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo">
+    </div>
+    
+      <button type="submit" class="btn btn-info">Buscar</button>
+  </div>
+
+
+ <div class="form-group">
+    <div class="col-xs-offset-2 col-xs-10">
+  <label class="radio-inline" >
+
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >Nombre
+  </label>
+  <label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Categoria
+  </label>
+</div>
+</div>
+
+<div class="form-group">
+<div class="col-xs-offset-2 col-xs-8">
+<table class="table table-hover" >
+
+  <tr class="info"><td>Nombre</td><td>Categoria</td><td>Cant. Jugadores</td></tr>
+  <tr><td>X</td><td>X</td><td>X</td></tr>
+  <tr><td>X</td><td>X</td><td>X</td></tr>
+</table>
+ </div>
+ </div>
+
+
+  
+<p></p>
+
+
+  <div class="form-group">
+    <label for="inputNombre" class="col-xs-1 control-label">Nombre:</label>
+    <div class="col-xs-3">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+    </div>
+    <label for="inputCategoria" class="col-xs-1 control-label">Categoria:</label>
+    <div class="col-xs-2">
+      <input type="text" class="form-control" id="inputCategoria" placeholder="Categoria">
+    </div>
+    <label for="inputJugadores" class="col-xs-1 control-label">Cant. Jugarores:</label>
+    <div class="col-xs-2">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores">
+    </div>
+
+  </div>
+
+  
+  <div class="form-group">
+    <div class="col-xs-offset-2 col-xs-10">
+      <button type="submit" class="btn btn-success">Modificar</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-offset-9 col-xs-2">
+      <button type="submit" class="btn btn-primary">Limpiar</button>
+    </div>
+  </div>
+</form>
+<!-- FIN FORM MODIFICAR GRUPOS -->
+ </div>
+
+
+ <div class="tab-pane fade" id="tabs-third">
+
+
+  <!-- FORM ELIMINAR GRUPOS -->
+<h2>Eliminar grupo</h2>
+<form class="form-horizontal" name="eliminar">
+  
+  <div class="form-group">
+    <label for="inputNombre" class="col-xs-2 control-label" id="label">   </label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo">
+    </div>
+    
+      <button type="submit" class="btn btn-info">Buscar</button>
+  </div>
+
+
+ <div class="form-group">
+    <div class="col-xs-offset-2 col-xs-10">
+  <label class="radio-inline" >
+
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >Nombre
+  </label>
+  <label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Categoria
+  </label>
+</div>
+</div>
+
+<div class="form-group">
+<div class="col-xs-offset-2 col-xs-8">
+<table class="table table-hover" >
+
+  <tr class="info"><td>Nombre</td><td>Categoria</td><td>Cant. Jugadores</td></tr>
+  <tr><td>X</td><td>X</td><td>X</td></tr>
+  <tr><td>X</td><td>X</td><td>X</td></tr>
+</table>
+ </div>
+ </div>
+
+
+  
+<p></p>
+
+
+  <div class="form-group">
+    <label for="inputNombre" class="col-xs-1 control-label">Nombre:</label>
+    <div class="col-xs-3">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+    </div>
+    <label for="inputCategoria" class="col-xs-1 control-label">Categoria:</label>
+    <div class="col-xs-2">
+      <input type="text" class="form-control" id="inputCategoria" placeholder="Categoria">
+    </div>
+    <label for="inputJugadores" class="col-xs-1 control-label">Cant. Jugarores:</label>
+    <div class="col-xs-2">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores">
+    </div>
+
+  </div>
+
+  
+
+
+
+<!-- Boton eliminar -->
+
+
+
+<div class="form-group">
+    <div class="col-xs-offset-2 col-xs-2">
+  <button type="submit" class="modal2 btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal2">
+  Eliminar
+  </button>
+  </div>
+</div>
+<!-- Formulario modal2n -->
+
+ <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar</h4>
+      </div>
+           
+          <div class="modal-body">
+            <form class="form-horizontal" method="post" action='' name="login_form">
+        <div class="form-group">
+            <label for="inputCI" class="col-xs-6 col-xs-offset-2 control-label">¿Esta seguro de eliminar este grupo?</label>
+              
+       </div>
+
+      
+              <div class="form-group">
+          <div class="col-xs-offset-2 col-xs-7">
+            <button type="submit" class="btn btn-success">Eliminar</button>
+          </div>
+        </div>
+
+
+              </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger">Cancelar
+              </button>
+          </div>
+        </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="form-group">
+    <div class="col-xs-offset-9 col-xs-2">
+      <button type="submit" class="btn btn-primary">Limpiar</button>
+    </div>
+  </div>
+</form>
+
+
+<!-- FIN FORM ELIMINAR GRUPOS -->
+ </div>
+
+
+</div>
+  
+
+
+	</div>
+
+
+</body>
+</html>

@@ -5,18 +5,33 @@
   <link rel="stylesheet" href="/Desarrollo_SSPED/bootstrap-3.3.6-dist/css/bootstrap.css">
     <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/jquery.js"></script>
     <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <!-- permitir solo numeros en un input -->
     <script type="text/javascript">
+         function justNumbers(e)
+    {
+       var keynum = window.event ? window.event.keyCode : e.which;
+       if ((keynum == 8) || (keynum == 46))
+            return true;
+        return /\d/.test(String.fromCharCode(keynum));
+    }
+    </script>
+
+    <!-- modificar label al presionar un radio Modificar -->   
+    <script>
+    
+      function tipo() {
+      if(document.modificar.inlineRadioOptionsMod[0].checked){
+       document.getElementById('buscarMod1').InnerHTML = "lsls"; 
+      }
+      else if(document.modificar.inlineRadioOptions[1].checked){
+      document.getElementById('inputNombreMo').InnerHTML = 'your text goes here';
+     }
      
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function() {
+    }
+   
 
-      $('#eliminar').on('click', function(){
-        $('#myModal3').modal('toggle')         
-      })  
-
-    })
-    </script>
+</script>
+    
 </head>
 <body>
 <!--  llamada a la cabecera -->
@@ -33,7 +48,7 @@
 <!-- Contenedor Pestaña ABM GRUPOS -->
 <div class="col-xs-7">
 <div class="panel panel-default">
-  <div class="panel-heading">Programacion grupos</div>
+  <div class="panel-heading">Administracion de grupos</div>
   <div class="panel-body">
 
 
@@ -52,7 +67,7 @@
  <div class="active tab-pane fade in" id="tabs-first">
   
 <!-- FORM CREAR GRUPOS -->
-<h2>Registrar nuevo grupo</h2>
+<h3>Registrar nuevo grupo</h3>
 <form class="form-horizontal">
   
   <div class="form-group">
@@ -79,9 +94,9 @@
   </div>
 
   <div class="form-group">
-    <label for="inputJugadores" class="col-xs-2 control-label">Jugadores:</label>
+    <label for="inputJugadores" class="col-xs-2 control-label "     >Jugadores:</label>
     <div class="col-xs-8">
-      <input type="text" class="form-control" id="inputJugadores" placeholder="Cantidad de jugadores">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Cantidad de jugadores" onkeypress="return justNumbers(event);">
     </div>
   </div>
 
@@ -110,17 +125,18 @@
 
 
   <!-- FORM MODIFICAR GRUPOS -->
-<h2>Modificar grupo</h2>
-<form class="form-horizontal" name="modificar">
+<h3>Modificar grupo</h3>
+<form class="form-horizontal" name="modificar" id="modificar">
   
   <div class="form-group">
-    <label for="inputNombre" class="col-xs-2 control-label" id="label">   </label>
-    <div class="col-xs-5">
-      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo">
+    <label for="inputNombreMo" class="col-xs-2 control-label" id="buscarMod1" >   </label>
+    <div class="col-xs-7">
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo" >
     </div>
     
-      <button type="submit" class="btn btn-default">Buscar
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <button type="button" class="btn btn-default ">
+        <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+        Buscar
       </button>
   </div>
 
@@ -128,10 +144,10 @@
  <div class="form-group">
     <div class="col-xs-offset-2 col-xs-10">
       <label class="radio-inline" >
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >Nombre
+        <input type="radio" name="inlineRadioOptionsMod" id="inlineRadio1" value="option1"  >Nombre
         </label>
         <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Categoria
+        <input type="radio" name="inlineRadioOptionsMod" id="inlineRadio2" value="option2"  >Categoria
       </label>
   </div>
 </div>
@@ -171,7 +187,7 @@
    <div class="form-group"> 
     <label for="inputJugadores" class="col-xs-offset-1 col-xs-3 control-label">Cant. Jugarores:</label>
     <div class="col-xs-5">
-      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores" onkeypress="return justNumbers(event);">
     </div>
   </div>
 
@@ -199,16 +215,17 @@
 
 
   <!-- FORM ELIMINAR GRUPOS -->
-<h2>Eliminar grupo</h2>
+<h3>Eliminar grupo</h3>
   <form class="form-horizontal" name="eliminar">
   
    <div class="form-group">
      <label for="inputNombre" class="col-xs-2 control-label" id="label">   </label>
-     <div class="col-xs-5">
+     <div class="col-xs-7">
         <input type="text" class="form-control" id="inputNombre" placeholder="Nombre de grupo">
       </div>  
-      <button type="submit" class="btn btn-default">Buscar
+      <button type="button" class="btn btn-default">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      Buscar
       </button>
   </div>
 
@@ -251,19 +268,19 @@
     <div class="form-group">
       <label for="inputNombre" class="col-xs-offset-1 col-xs-3 control-label">Nombre:</label>
         <div class="col-xs-5">
-          <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+          <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" disabled>
         </div>
     </div>
    <div class="form-group">
     <label for="inputCategoria" class="col-xs-offset-1 col-xs-3 control-label">Categoria:</label>
       <div class="col-xs-5">
-        <input type="text" class="form-control" id="inputCategoria" placeholder="Categoria">
+        <input type="text" class="form-control" id="inputCategoria" placeholder="Categoria" disabled>
       </div>
     </div>
    <div class="form-group"> 
     <label for="inputJugadores" class="col-xs-offset-1 col-xs-3 control-label">Cant. Jugarores:</label>
     <div class="col-xs-5">
-      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores">
+      <input type="text" class="form-control" id="inputJugadores" placeholder="Jugadores" disabled>
     </div>
   </div>
 
@@ -275,14 +292,14 @@
 
 <div class="form-group">
     <div class="col-xs-offset-2 col-xs-2">
-  <button type="submit" class="eliminar btn btn-danger " data-toggle="modal" data-target="#myModal3">
+  <button type="button" class="eliminar btn btn-danger " data-toggle="modal" data-target="#myModalEliminarGrupo">
   Eliminar
   </button>
   </div>
 </div>
 <!-- Formulario modal2n -->
 
- <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal fade" id="myModalEliminarGrupo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
           <div class="modal-header">
@@ -318,11 +335,6 @@
 
 
 
-  <div class="form-group">
-    <div class="col-xs-offset-9 col-xs-2">
-      <button type="submit" class="btn btn-primary">Limpiar</button>
-    </div>
-  </div>
 </form>
 
 
