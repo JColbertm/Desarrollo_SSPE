@@ -13,137 +13,189 @@
 
 <!-- CREACION DE TABS -->
 <ul class="nav nav-tabs" role="tablist">
- <li class="active"><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-first">OP1</a></li>
- <li><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-second">OP2</a></li>
+	<li class="active"><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-first">OP1</a></li>
+ 	<li><a href="javascript:;" role="tab" data-toggle="tab" data-target="#tabs-second">OP2</a></li>
 </ul>
+
 <div class="tab-content">
- <div class="active tab-pane fade in" id="tabs-first">
+	<div class="active tab-pane fade in" id="tabs-first">
   
-<!-- FORM OP1 -->
-<h2>Registrar nuevo grupo</h2>
+		<!-- FORM OP1 -->
+
+		<form class="form-horizontal" role="form" method="post">
+
+			<h2>Registrar nuevo grupo</h2>
+
+			<div class="row">
+			<div class="col-md-6">
+				<h3>Preparatorio</h3>
+				<div class="col-md-6">
+					<h3>Preparacion General</h3>
+
+					<label>Tiempo:</label>
+					<input type="text" class="form-control" id="imputTiempoPG">
+
+					<label>Mesociclos:</label>
+					<input type="text" class="form-control" id="imputCiclosPG">
 
 
+				</div>
+				<div class="col-md-6">
+					<h3>Preparacion Especial</h3>
+					<label>Tiempo:</label>
+					<input type="text" class="form-control" id="imputTiempoPE">
 
+					<label>Mesociclos:</label>
+					<input type="text" class="form-control" id="imputCiclosPE">
 
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<h3>Competitivo</h3>
+				<div class="col-md-6">
+					<h3>Pre conpetitivo</h3>
+					<label>Tiempo:</label>
+					<input type="text" class="form-control" id="imputTiempoPC">
+
+					<label>Mesociclos:</label>
+					<input type="text" class="form-control" id="imputCiclosPC">
+
+				</div>
+				<div class="col-md-6">
+					<h3>Competitivo</h3>
+					<label>Tiempo:</label>
+					<input type="text" class="form-control" id="imputTiempoC">
+
+					<label>Mesociclos:</label>
+					<input type="text" class="form-control" id="imputCiclosC">
+
+				</div>
+			</div>
+
+			</div>
+			<br>
+			<br>
+			<div class="row">
+
+				<div class="col-md-3 col-xs-offset-9 row">
+					<button type="button" class="btn btn-success" data-dixsiss="modal" id="btnCotinnuar">Continuar</button>
+				</div>
+
+			</div>
+
+		</form>
+
+ 	</div>
 
 <!-- FIN OP 1 -->
 
 
- </div>
- <div class="tab-pane fade" id="tabs-second">
+<!-- FORM OP 2 -->
+	<div class="tab-pane fade" id="tabs-second">
 
 
+		<h2>OP2</h2>
 
+		<div class="row">
+			<!-- PRIMER TABLA-->
+			<div class="col-md-6">
+			<label>Preparacion General</label>
 
-  <!-- FORM OP 2 -->
-<h2>OP2</h2>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Ciclo</th>
+						<th>Tiempo</th> 
+					</tr>
+				</thead>
 
-<!-- PRIMER TABLA-->
-<div class="col-md-6">
-<label>Preparacion General</label>
+				<tbody id="cuerpoTablaPG">
+					<tr>
+						<td>Juan Perez Seras</td>
+						<td>5</td>
+					</tr>
+				</tbody>
 
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th>Ciclo</th>
-			<th>Tiempo</th> 
-		</tr>
-	</thead>
+			   
+			</table>
 
-	<tbody id="cuerpoTabla1">
-		<tr>
-			<td>Juan Perez Seras</td>
-			<td>5</td>
-		</tr>
-	</tbody>
+			</div>
+			<!-- SEGUNDA TABLA-->
+			<div class="col-md-6">
+			<label>Preparacion Especial</label>
 
-   
-</table>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Ciclo</th>
+						<th>Tiempo</th> 
+					</tr>
+				</thead>
 
-</div>
-<!-- SEGUNDA TABLA-->
-<div class="col-md-6">
-<label>Preparacion Especial</label>
+				<tbody id="cuerpoTablaPE">
+					<tr>
+						<td>Juan Perez Seras</td>
+						<td>5</td>
+					</tr>
+				</tbody>  
+			</table>
 
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th>Ciclo</th>
-			<th>Tiempo</th> 
-		</tr>
-	</thead>
+			</div>
+		</div>
 
-	<tbody id="cuerpoTabla2">
-		<tr>
-			<td>Juan Perez Seras</td>
-			<td>5</td>
-		</tr>
-	</tbody>  
-</table>
+		<!-- TERCERA TABLA-->
+		<div class="row">
+			<div class="col-md-6">
+			<label>Pre conpetitivo</label>
 
-</div>
-<!-- TERCERA TABLA-->
-<div class="col-md-6">
-<label>Pre conpetitivo</label>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Ciclo</th>
+						<th>Tiempo</th> 
+					</tr>
+				</thead>
 
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th>Ciclo</th>
-			<th>Tiempo</th> 
-		</tr>
-	</thead>
+					<tbody id="cuerpoTablaPC">
+					<tr>
+						<td>Juan Perez Seras</td>
+						<td>5</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<tbody id="cuerpoTabla3">
-		<tr>
-			<td>Juan Perez Seras</td>
-			<td>5</td>
-		</tr>
-	</tbody>
-</table>
+			</div>
+			<!-- CUARTA TABLA-->
+			<div class="col-md-6">
+			<label>Conpetitivo</label>
 
-</div>
-<!-- CUARTA TABLA-->
-<div class="col-md-6">
-<label>Conpetitivo</label>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>Ciclo</th>
+						<th>Tiempo</th> 
+					</tr>
+				</thead>
 
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th>Ciclo</th>
-			<th>Tiempo</th> 
-		</tr>
-	</thead>
+				<tbody id="cuerpoTablaC">
+					<tr>
+						<td>Juan Perez Seras</td>
+						<td>5</td>
+					</tr>
+				</tbody>
+			</table>
 
-	<tbody id="cuerpoTabla4">
-		<tr>
-			<td>Juan Perez Seras</td>
-			<td>5</td>
-		</tr>
-	</tbody>
-</table>
+			</div>
+		</div>
 
-</div>
-<!-- FIN OP2 -->
- </div>
-
-
- <div class="tab-pane fade" id="tabs-third">
-
-
-
-
-
-  <div class="form-group">
-    <div class="col-xs-offset-9 col-xs-2">
-      <button type="submit" class="btn btn-primary">Limpiar</button>
-    </div>
-  </div>
-</form>
-
-
-<!-- FIN FORM ELIMINAR GRUPOS -->
- </div>
+		<div class="row">
+			<div class="col-md-3 col-xs-offset-10 row">
+				<button type="button" class="btn btn-success" data-dixsiss="modal" id="btnCotinnuar">Continuar</button>
+			</div>
+		</div>
+		<!-- FIN OP2 -->
+	 </div>
 
 
 <script type="text/javascript" src="/spit/vista/cargarTablasProgramacion.js"></script>

@@ -1,44 +1,78 @@
 $(document).on('ready',funcPrincipal);
 
-var cantidad1=5;
-var cantidad2=3;
-var cantidad3=2;
-var cantidad4=6;
+//CANTIDAD DE CICLOS
+var cantidadPG=5;
+var cantidadPE=3;
+var cantidadPC=2;
+var cantidadC=6;
 
+var cuerpoTablaPG=$("#cuerpoTablaPG");
+var cuerpoTablaPE=$("#cuerpoTablaPE");
+var cuerpoTablaPC=$("#cuerpoTablaPC");
+var cuerpoTablaC=$("#cuerpoTablaC");
 
+//VALORES TOTALES DE LA SUMA EN LAS TABLAS
+var totalPG=0;
+var totalPE=0;
+var totalPC=0;
+var totalC=0;
 
-var cuerpoTabla1=$("#cuerpoTabla1");
-var cuerpoTabla2=$("#cuerpoTabla2");
-var cuerpoTabla3=$("#cuerpoTabla3");
-var cuerpoTabla4=$("#cuerpoTabla4");
+//VALOR ESPERADO POR CICLO
+var esperadoPG=10;
+var esperadoPE=10;
+var esperadoPC=10;
+var esperadoC=10;
 
-var total1=0;
-var total2=0;
-var total3=0;
-var total4=0;
-
-var esperado1=10;
-var esperado2=10;
-var esperado3=10;
-var esperado4=10;
+var btnContinuar=$("#btnCotinnuar");
 
 
 
 function funcPrincipal(){
-	CargarTablas1();
-	CargarTablas2();
-	CargarTablas3();
-	CargarTablas4();
+
+
+	btnContinuar.on( "click", function(){
+		// OBTENER LOS CALORES DE LOS INPUTS DE TEXTO
+		esperadoPG=$("#imputTiempoPG").val();
+		cantidadPG=$("#imputCiclosPG").val();
+
+		esperadoPE=$("#imputTiempoPE").val();
+		cantidadPE=$("#imputCiclosPE").val();
+
+		esperadoPC=$("#imputTiempoPC").val();
+		cantidadPC=$("#imputCiclosPC").val();
+
+		esperadoC=$("#imputTiempoC").val();
+		cantidadC=$("#imputCiclosC").val();
+
+		//VERIFICAR QUE LOS DATOS SEAN CORRECTOS: QUE EL TIEMPO DE MESES NO SEA MENOR A LA CANTIDAD DE MESOCICLOS, 
+		//Y QUE LA CANTIDAD DE TIEMPO NO SEA MAYOR A LA CANTIDAD DE MESOCICLOS POR 6, QUE ES POR AHORA LA MAXIMA
+		//CANTIDAD DE TIEMPO ESTABLECIDO POR MESOCICLO.
+
+		if (esperadoPG<cantidadPG){
+			alert("Verifique que la cantidad de mesocilios sea por lo minimo igual al tiempo estimado en meses.");
+
+		}else if (esperadoPG>cantidadPG*6){
+				alert("Verifique que la cantidad de tiempo pueda abarcarse en la cantidad de mesociclos. ")
+			}else{
+				CargarTablasPG();
+				CargarTablasPE();
+				CargarTablasPC();
+				CargarTablasC();
+			}
+		//LLAMAR A LA CREACION DE NUEVO DE LAS TABLAS.
+	});
+	
+
 }
 
-
-function CargarTablas1(){
-	cuerpoTabla1.find('tr').remove();
-	cuerpoTabla1.find('td').remove();
-	for (i=1;i<=cantidad1;i++){
-        cuerpoTabla1.append('<tr>'+
+//------------ PARA LA PRIMERA TABLA
+function CargarTablasPG(){
+	cuerpoTablaPG.find('tr').remove();
+	cuerpoTablaPG.find('td').remove();
+	for (i=1;i<=cantidadPG;i++){
+        cuerpoTablaPG.append('<tr>'+
         	'<td>' + i + '</td>'+
-            '<td> <select class="form-control" id="select" onchange="calculoTotal1()">'+
+            '<td> <select class="form-control" id="select" onchange="calculototalPG()">'+
 	            '<option>1</option>'+
 				'<option>2</option>'+
 				'<option>3</option>'+
@@ -49,40 +83,38 @@ function CargarTablas1(){
             '</tr>');
 	}
 
-	cuerpoTabla1.append('<tr>'+
+	cuerpoTablaPG.append('<tr>'+
 		'<td> Total </td>'+
-		'<td> <label for="lblTotal1">'+total1+'</label></td>'+
+		'<td> <label for="lbltotalPG">'+totalPG+'</label></td>'+
 		'</tr>');
 
-	calculoTotal1();
+	calculototalPG();
 }
-
-function calculoTotal1(){
-	total1=0;
-	$('#cuerpoTabla1 tr').each(function(){
+function calculototalPG(){
+	totalPG=0;
+	$('#cuerpoTablaPG tr').each(function(){
 		$(this).find('td select').each(function(){
-			total1=total1 + parseInt($(this).find('option:selected').text());
+			totalPG=totalPG + parseInt($(this).find('option:selected').text());
     	})
 	})
-	$("label[for='lblTotal1']").text(total1);
+	$("label[for='lbltotalPG']").text(totalPG);
 
-	if (total1==esperado1){
-		$("label[for='lblTotal1']").css('color', 'green');	
+	if (totalPG==esperadoPG){
+		$("label[for='lbltotalPG']").css('color', 'green');	
 	}else{
-		$("label[for='lblTotal1']").css('color', 'red');	
+		$("label[for='lbltotalPG']").css('color', 'red');	
 	}
 
 }
 
-
-
-function CargarTablas2(){
-	cuerpoTabla2.find('tr').remove();
-	cuerpoTabla2.find('td').remove();
-	for (i=1;i<=cantidad2;i++){
-        cuerpoTabla2.append('<tr>'+
+//------------ PARA LA SEGUNDA TABLA
+function CargarTablasPE(){
+	cuerpoTablaPE.find('tr').remove();
+	cuerpoTablaPE.find('td').remove();
+	for (i=1;i<=cantidadPE;i++){
+        cuerpoTablaPE.append('<tr>'+
         	'<td>' + i + '</td>'+
-            '<td> <select class="form-control" id="select" onchange="calculoTotal2()">'+
+            '<td> <select class="form-control" id="select" onchange="calculoTotalPE()">'+
 	            '<option>1</option>'+
 				'<option>2</option>'+
 				'<option>3</option>'+
@@ -93,38 +125,39 @@ function CargarTablas2(){
             '</tr>');
 	}
 
-	cuerpoTabla2.append('<tr>'+
+	cuerpoTablaPE.append('<tr>'+
 		'<td> Total </td>'+
-		'<td> <label for="lblTotal2">'+total2+'</label></td>'+
+		'<td> <label for="lblTotalPE">'+totalPE+'</label></td>'+
 		'</tr>');
 
-	calculoTotal2();
+	calculoTotalPE();
 }
 
-function calculoTotal2(){
-	total2=0;
-	$('#cuerpoTabla2 tr').each(function(){
+function calculoTotalPE(){
+	totalPE=0;
+	$('#cuerpoTablaPE tr').each(function(){
 		$(this).find('td select').each(function(){
-			total2=total2 + parseInt($(this).find('option:selected').text());
+			totalPE=totalPE + parseInt($(this).find('option:selected').text());
     	})
 	})
-	$("label[for='lblTotal2']").text(total2);
+	$("label[for='lblTotalPE']").text(totalPE);
 
-	if (total2==esperado2){
-		$("label[for='lblTotal2']").css('color', 'green');	
+	if (totalPE==esperadoPE){
+		$("label[for='lblTotalPE']").css('color', 'green');	
 	}else{
-		$("label[for='lblTotal2']").css('color', 'red');	
+		$("label[for='lblTotalPE']").css('color', 'red');	
 	}
 }
 
 
-function CargarTablas3(){
-	cuerpoTabla3.find('tr').remove();
-	cuerpoTabla3.find('td').remove();
-	for (i=1;i<=cantidad3;i++){
-        cuerpoTabla3.append('<tr>'+
+//------------ PARA LA TERCERA TABLA
+function CargarTablasPC(){
+	cuerpoTablaPC.find('tr').remove();
+	cuerpoTablaPC.find('td').remove();
+	for (i=1;i<=cantidadPC;i++){
+        cuerpoTablaPC.append('<tr>'+
         	'<td>' + i + '</td>'+
-            '<td> <select class="form-control" id="select" onchange="calculoTotal3()">'+
+            '<td> <select class="form-control" id="select" onchange="calculoTotalPC()">'+
 	            '<option>1</option>'+
 				'<option>2</option>'+
 				'<option>3</option>'+
@@ -135,37 +168,39 @@ function CargarTablas3(){
             '</tr>');
 	}
 
-	cuerpoTabla3.append('<tr>'+
+	cuerpoTablaPC.append('<tr>'+
 		'<td> Total </td>'+
-		'<td> <label for="lblTotal3">'+total3+'</label></td>'+
+		'<td> <label for="lblTotalPC">'+totalPC+'</label></td>'+
 		'</tr>');
 
-	calculoTotal3();
+	calculoTotalPC();
 }
 
-function calculoTotal3(){
-	total3=0;
-	$('#cuerpoTabla3 tr').each(function(){
+function calculoTotalPC(){
+	totalPC=0;
+	$('#cuerpoTablaPC tr').each(function(){
 		$(this).find('td select').each(function(){
-			total3=total3 + parseInt($(this).find('option:selected').text());
+			totalPC=totalPC + parseInt($(this).find('option:selected').text());
     	})
 	})
-	$("label[for='lblTotal3']").text(total3);
+	$("label[for='lblTotalPC']").text(totalPC);
 
-	if (total3==esperado3){
-		$("label[for='lblTotal3']").css('color', 'green');	
+	if (totalPC==esperadoPC){
+		$("label[for='lblTotalPC']").css('color', 'green');	
 	}else{
-		$("label[for='lblTotal3']").css('color', 'red');	
+		$("label[for='lblTotalPC']").css('color', 'red');	
 	}
 }
 
-function CargarTablas4(){
-	cuerpoTabla4.find('tr').remove();
-	cuerpoTabla4.find('td').remove();
-	for (i=1;i<=cantidad4;i++){
-        cuerpoTabla4.append('<tr>'+
+
+//------------ PARA LA CUARTA TABLA
+function CargarTablasC(){
+	cuerpoTablaC.find('tr').remove();
+	cuerpoTablaC.find('td').remove();
+	for (i=1;i<=cantidadC;i++){
+        cuerpoTablaC.append('<tr>'+
         	'<td>' + i + '</td>'+
-            '<td> <select class="form-control" id="select" onchange="calculoTotal4()">'+
+            '<td> <select class="form-control" id="select" onchange="calculoTotalC()">'+
 	            '<option>1</option>'+
 				'<option>2</option>'+
 				'<option>3</option>'+
@@ -176,27 +211,27 @@ function CargarTablas4(){
             '</tr>');
 	}
 
-	cuerpoTabla4.append('<tr>'+
+	cuerpoTablaC.append('<tr>'+
 		'<td> Total </td>'+
-		'<td> <label for="lblTotal4">'+total4+'</label></td>'+
+		'<td> <label for="lblTotalC">'+totalC+'</label></td>'+
 		'</tr>');
 
-	calculoTotal4();
+	calculoTotalC();
 }
 
-function calculoTotal4(){
-	total4=0;
-	$('#cuerpoTabla4 tr').each(function(){
+function calculoTotalC(){
+	totalC=0;
+	$('#cuerpoTablaC tr').each(function(){
 		$(this).find('td select').each(function(){
-			total4=total4 + parseInt($(this).find('option:selected').text());
+			totalC=totalC + parseInt($(this).find('option:selected').text());
     	})
 	})
-	$("label[for='lblTotal4']").text(total4);
+	$("label[for='lblTotalC']").text(totalC);
 
-	if (total4==esperado4){
-		$("label[for='lblTotal4']").css('color', 'green');	
+	if (totalC==esperadoC){
+		$("label[for='lblTotalC']").css('color', 'green');	
 	}else{
-		$("label[for='lblTotal4']").css('color', 'red');	
+		$("label[for='lblTotalC']").css('color', 'red');	
 	}
 }
 
