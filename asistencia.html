@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/Desarrollo_SSPED/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/jquery.js"></script>
+    <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+     
+
+</script>
+</head>
+<body>
+
+<!--  llamada a la cabecera -->
+	<?php 
+		require_once $_SERVER["DOCUMENT_ROOT"]."/Desarrollo_SSPED/cabecera1.php";
+ 	?>
+
+ <!--  llamada a menu de opciones futbol -->
+	<?php 
+		require_once $_SERVER["DOCUMENT_ROOT"]."/Desarrollo_SSPED/listabotones1.php";
+ 	?>
+
+<!--  definicion de lugar (center) -->
+	<div class="col-xs-offset-2 col-xs-8">
+ 		<div class="jumbotron">
+  			<div class="media">
+  				<div class="media-center">
+  					<!-- Inicio de menu (pestanas) nombres -->
+	    			<div class="panel panel-default">
+  						<!-- Default panel contents -->
+  						<div class="panel panel-default">
+  				<!-- Default panel contents -->
+  				<div class="panel-heading" align="center"><h4>ASISTENCIA</h4></div>
+  				<div class="panel-body" align="left">
+				    <form id="productForm" method="post" class="form-horizontal">
+				    <div class="form-group">
+				        <label class="col-xs-5 control-label">GRUPO</label>
+				        <div class="col-xs-3 selectContainer">
+				            <select class="form-control" name="grupo">
+				                <option value="">----</option>
+				                <option value="bo">Bolivar</option>
+				                <option value="rm">Real Madrid</option>
+				                <option value="wl">Wilstermann</option>
+				                <option value="boo">Booming</option>
+				            </select>
+				        </div>
+				    </div>
+
+				    <div class="form-group">
+				        <label class="col-xs-5 control-label">MESOCICLO</label>
+				        <div class="col-xs-3 selectContainer">
+				            <select class="form-control" name="meso">
+				                <option value="">----</option>
+				                <option value="m1">1</option>
+				                <option value="m2">2</option>
+				                <option value="m3">3</option>
+				                <option value="m4">4</option>
+				                <option value="m5">5</option>
+				            </select>
+				        </div>
+				    </div>
+
+				   
+				</form>
+    
+  <!-- Table -->
+    <div class="table-responsive">          
+
+						  <table class="table" style="width:100%" align="center">
+						   	<thead>
+						      <tr>
+						        <th>NOMBRE</th>
+						        <th>C1</th>
+						        <th>C2</th>
+						        <th>C3</th>
+						        <th>C4</th>
+						        <th>C5</th>
+						        <th>C6</th>
+						        <th>T.</th>
+						        <th>%</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    <form class="form-inline text-left" role="form" name="colum1" action="" method="post">
+						      <tr>
+						        <td>Jo SDFSDFS SDFDS</td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"   />
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						      </tr>
+						      <tr>
+						        <td>My SDFSDFD SDFS</td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control"  />
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						      </tr>
+						      <tr>
+						        <td>Jy SDFSDF SDF SDF</td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="checkbox" class="form-control" />
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						        <td>
+						        	<input type="text" class="form-control" placeholder="0" maxlength="2" onKeypress="" size="1"disabled/>
+						        </td>
+						      </tr>
+						      </form>
+						    </tbody>
+						  </table>
+
+  									</div>
+    									<div align="right">
+										<form id="form" name="gua">
+											<input type="button" class="btn btn-success" onclick="guardar()" value="GUARDAR" method="post" value="POST VAL"/>
+											<input type="button" class="btn btn-success" onclick="#" name="proyecto" value="EXPORTAR" id="to" value="POST VAL" />
+										</form>
+									</div>
+</div>				
+
+
+					<!-- armado de contenido de pestanas  -->
+						
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<?php 
+		require_once $_SERVER["DOCUMENT_ROOT"]."/Desarrollo_SSPED/pie1.php";
+ 	?>
+</body>
+</html>
+
