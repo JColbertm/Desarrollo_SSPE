@@ -128,11 +128,49 @@
       <div class="row">
       <div class="col-md-6">
         <h3>Preparatorio</h3>
+
+        <br>
+        <br>
+
+        <label class="radio-inline"><input type="radio" name="optradio">60 %</label>
+        <label class="radio-inline"><input type="radio" name="optradio">50 %</label>
+        <label class="radio-inline"><input type="radio" name="optradio">40 %</label>
+
+        <br>
+        <br>
+
+        <label>Tiempo en semanas: </label>
+        <label> 30 </label> Semanas.
+
+        <br>
+        <br>
+
+
+
         <div class="col-md-6">
           <h4>Preparacion General</h4>
 
-          <label>Tiempo:</label>
-          <input type="text" class="form-control" id="imputTiempoPG">
+          <br>
+
+          <div class="radio">
+            <label><input type="radio" name="optradio">60 %</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">50 %</label>
+          </div>
+          <div class="radio disabled">
+            <label><input type="radio" name="optradio">40 %</label>
+          </div>
+
+          <br>
+
+          <label>Tiempo en semanas: </label>
+          <label> 30 </label> Semanas.
+
+
+
+          <br>
+          <br>
 
           <label>Mesociclos:</label>
           <input type="text" class="form-control" id="imputCiclosPG">
@@ -141,8 +179,27 @@
         </div>
         <div class="col-md-6">
           <h4>Preparacion Especial</h4>
-          <label>Tiempo:</label>
-          <input type="text" class="form-control" id="imputTiempoPE">
+
+          <br>
+
+          <div class="radio">
+            <label><input type="radio" name="optradio">60 %</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">50 %</label>
+          </div>
+          <div class="radio disabled">
+            <label><input type="radio" name="optradio">40 %</label>
+          </div>
+
+          <br>
+
+          <label>Tiempo en semanas: </label>
+          <label> 30 </label> Semanas.
+
+
+          <br>
+          <br>
 
           <label>Mesociclos:</label>
           <input type="text" class="form-control" id="imputCiclosPE">
@@ -152,10 +209,47 @@
 
       <div class="col-md-6">
         <h3>Competitivo</h3>
+
+        <br>
+        <br>
+
+        <label class="radio-inline"><input type="radio" name="optradio">60 %</label>
+        <label class="radio-inline"><input type="radio" name="optradio">50 %</label>
+        <label class="radio-inline"><input type="radio" name="optradio">40 %</label>
+
+        <br>
+        <br>
+
+        <label>Tiempo en semanas: </label>
+        <label> 30 </label> Semanas.
+
+        <br>
+        <br>
+
+
         <div class="col-md-6">
           <h4>Pre conpetitivo</h4>
-          <label>Tiempo:</label>
-          <input type="text" class="form-control" id="imputTiempoPC">
+          <br>
+
+          <div class="radio">
+            <label><input type="radio" name="optradio">60 %</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">50 %</label>
+          </div>
+          <div class="radio disabled">
+            <label><input type="radio" name="optradio">40 %</label>
+          </div>
+
+          <br>
+
+          <label>Tiempo en semanas: </label>
+          <label> 30 </label> Semanas.
+
+
+          <br>
+          <br>
+          <br>
 
           <label>Mesociclos:</label>
           <input type="text" class="form-control" id="imputCiclosPC">
@@ -163,8 +257,27 @@
         </div>
         <div class="col-md-6">
           <h4>Competitivo</h4>
-          <label>Tiempo:</label>
-          <input type="text" class="form-control" id="imputTiempoC">
+          <br>
+
+          <div class="radio">
+            <label><input type="radio" name="optradio">60 %</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">50 %</label>
+          </div>
+          <div class="radio disabled">
+            <label><input type="radio" name="optradio">40 %</label>
+          </div>
+
+          <br>
+
+          <label>Tiempo en semanas: </label>
+          <label> 30 </label> Semanas.
+
+
+          <br>
+          <br>
+          <br>
 
           <label>Mesociclos:</label>
           <input type="text" class="form-control" id="imputCiclosC">

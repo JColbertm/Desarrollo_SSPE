@@ -6,7 +6,7 @@
     <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/jquery.js"></script>
     <script src="/Desarrollo_SSPED/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
     <script type="text/javascript">
-      function sumar_col1(c)
+    function sumar_col1(c)
     {
       var subtotal = 0;
       campo = c.form;

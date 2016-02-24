@@ -28,8 +28,6 @@ var btnContinuar=$("#btnCotinnuar");
 
 
 function funcPrincipal(){
-
-
 	btnContinuar.on( "click", function(){
 		// OBTENER LOS CALORES DE LOS INPUTS DE TEXTO
 		esperadoPG=$("#imputTiempoPG").val();
