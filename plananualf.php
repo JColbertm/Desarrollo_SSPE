@@ -225,7 +225,7 @@
                               <div class="form-group" align="center"><h6>COMPETENCIA</h6></div>
                               <div class="form-group" align="center" ><h6>TOTAL</h6></div>
                                 </div>
-                                <div class="col-xs-5 col-md-1"style="line-height: 2.8" >
+                                <div class="col-xs-5 col-md-1"style="line-height: 2.7" >
                                           <form class="form-inline text-left" role="form" name="colum1" action="" method="post">
                                       <input type="text" class="form-control" name="sum[]" placeholder="0" onkeyup="sumar_col1(this);" maxlength="2" size="1"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" >
                                             <input type="text" class="form-control" name="sum[]" placeholder="0" onkeyup="sumar_col1(this);" maxlength="2" size="1"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
@@ -247,9 +247,10 @@
                               <div class="form-group" align="center" ><h6>TECNICO FISICO</h6></div>
                               <div class="form-group" align="center"><h6>TECNICO TACTICO</h6></div>  
                               <div class="form-group" align="center"><h6>PRE<BR>PSICOLOGICO</h6></div>
+                              <div class="form-group" align="center"><h6>COMPETENCIA</h6></div>
                               <div class="form-group" align="center" ><h6>TOTAL</h6></div>
                                 </div>
-                                <div class="col-xs-5 col-md-1"style="line-height: 2.8" >
+                                <div class="col-xs-5 col-md-1"style="line-height: 2.7" >
                                       <form class="form-inline text-left" role="form" name="colum2" action="" method="post" >
                                           
                                       <input type="text" class="form-control" name="sum[]" placeholder="0" onkeyup="sumar_col2(this);" maxlength="2" size="1"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
@@ -272,9 +273,10 @@
                               <div class="form-group" align="center" ><h6>TECNICO FISICO</h6></div>
                               <div class="form-group" align="center"><h6>TECNICO TACTICO</h6></div>  
                               <div class="form-group" align="center"><h6>PRE<BR>PSICOLOGICO</h6></div>
+                              <div class="form-group" align="center"><h6>COMPETENCIA</h6></div>
                               <div class="form-group" align="center" ><h6>TOTAL</h6></div>
                                 </div>
-                                <div class="col-xs-5 col-md-1"style="line-height: 2.8" >
+                                <div class="col-xs-5 col-md-1"style="line-height: 2.7" >
                                           <form class="form-inline text-left" role="form" name="colum3" action="" method="post">
                                           
                                       <input type="text" class="form-control" name="sum[]" placeholder="0" onkeyup="sumar_col3(this);" maxlength="2" size="1"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
@@ -297,9 +299,10 @@
                               <div class="form-group" align="center" ><h6>TECNICO FISICO</h6></div>
                               <div class="form-group" align="center"><h6>TECNICO TACTICO</h6></div>  
                               <div class="form-group" align="center"><h6>PRE<BR>PSICOLOGICO</h6></div>
+                              <div class="form-group" align="center"><h6>COMPETENCIA</h6></div>
                               <div class="form-group" align="center" ><h6>TOTAL</h6></div>
                                 </div>
-                                <div class="col-xs-5 col-md-1"style="line-height: 2.8" >
+                                <div class="col-xs-5 col-md-1"style="line-height: 2.7" >
                                           <form class="form-inline text-left" role="form" name="colum4" action="" method="post">
                                           
                                       <input type="text" class="form-control" name="sum[]" placeholder="0" onkeyup="sumar_col4(this);" maxlength="2" size="1"onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
